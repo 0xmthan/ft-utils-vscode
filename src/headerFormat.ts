@@ -30,15 +30,15 @@ export function buildHeaderLines(
 
 	return [
 		formatBorder(innerWidth, delimiters),
-		formatEmpty(innerWidth, delimiters),
+		formatRightAligned(HEADER_SUFFIXES.first, innerWidth, delimiters),
 		formatRightAligned(HEADER_SUFFIXES.title, innerWidth, delimiters),
-		formatLine(`  ${fileName}`, HEADER_SUFFIXES.file, innerWidth, delimiters),
+		formatLine(`${fileName}`, HEADER_SUFFIXES.file, innerWidth, delimiters),
 		formatRightAligned(HEADER_SUFFIXES.column, innerWidth, delimiters),
-		formatLine(`  By: ${identity}`, HEADER_SUFFIXES.by, innerWidth, delimiters),
+		formatLine(`By: ${identity}`, HEADER_SUFFIXES.by, innerWidth, delimiters),
 		formatRightAligned(HEADER_SUFFIXES.spacer, innerWidth, delimiters),
-		formatLine(`  Created: ${createdAt} by ${createdBylogin}`, HEADER_SUFFIXES.created, innerWidth, delimiters),
-		formatLine(`  Updated: ${updatedAt} by ${settings.login}`, HEADER_SUFFIXES.updated, innerWidth, delimiters),
-		formatEmpty(innerWidth, delimiters),
+		formatLine(`Created: ${createdAt} by ${createdBylogin}`, HEADER_SUFFIXES.created, innerWidth, delimiters),
+		formatLine(`Updated: ${updatedAt} by ${settings.login}`, HEADER_SUFFIXES.updated, innerWidth, delimiters),
+		formatRightAligned(HEADER_SUFFIXES.last, innerWidth, delimiters),
 		formatBorder(innerWidth, delimiters),
 	];
 }
@@ -64,9 +64,9 @@ function formatBorder(innerWidth: number, delimiters: CommentDelimiters): string
 	return `${delimiters.start}${'*'.repeat(innerWidth)}${delimiters.end}`;
 }
 
-function formatEmpty(innerWidth: number, delimiters: CommentDelimiters): string {
+/*function formatEmpty(innerWidth: number, delimiters: CommentDelimiters): string {
 	return `${delimiters.start}${' '.repeat(innerWidth)}${delimiters.end}`;
-}
+}*/
 
 function truncate(value: string, maxLength: number): string {
 	if (value.length <= maxLength) {
