@@ -2,7 +2,7 @@
   "name": "ft-header",
   "displayName": "ft_utils",
   "description": "Utilities for 42 students: 42 header insertion, auto-header for new files, C function count, and flake8-friendly Python header width.",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "icon": "42.png",
   "publisher": "2mdtln",
   "repository": {
@@ -90,7 +90,7 @@
   },
   "devDependencies": {
     "@types/node": "~22.19.15",
-    "@types/vscode": "^1.110.0",
+    "@types/vscode": "^1.70.0",
     "esbuild": "^0.27.4",
     "eslint": "^9.39.4",
     "typescript": "^5.9.3",

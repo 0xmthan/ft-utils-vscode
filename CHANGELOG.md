@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.4.0 - 2026-03-29
+
+- Made header spacing dynamic for long email addresses while preserving the frame.
+- Auto-derive login from email when `ft_utils.login` is empty.
+
 ## 2.3.0 - 2026-02-14
 
 - Added Python-specific 79-character header width for flake8 `E501` compatibility.
