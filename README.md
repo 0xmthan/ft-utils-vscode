@@ -59,15 +59,14 @@ You can configure the extension in 2 ways.
 1. Open VS Code Settings.
 2. Search for `ft_utils`.
 3. Set:
-- `ft_utils.login` (your 42 login)
 - `ft_utils.email` (your 42 email)
+- `ft_utils.login` (optional override; defaults to the part before `@` in the email)
 
 ### `settings.json`
 Add these keys to your VS Code `settings.json`:
 
 ```json
 {
-  "ft_utils.login": "login",
   "ft_utils.email": "login@student.42.fr"
 }
 ```
