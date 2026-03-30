@@ -80,6 +80,11 @@ function truncate(value: string, maxLength: number): string {
 	if (value.length <= maxLength) {
 		return value;
 	}
+
+	if (value.endsWith('>')) {
+		return `${value.slice(0, Math.max(0, maxLength - 1))}>`;
+	}
+
 	return value.slice(0, Math.max(0, maxLength));
 }
 
@@ -88,7 +93,7 @@ function shiftSuffixesRight() {
 		title: shiftTextRight(HEADER_SUFFIXES.title),
 		column: shiftTextRight(HEADER_SUFFIXES.column),
 		file: shiftTextRight(HEADER_SUFFIXES.file),
-		by: shiftTextRight(HEADER_SUFFIXES.by),
+		by: HEADER_SUFFIXES.by.slice(0, -1),
 		spacer: shiftTextRight(HEADER_SUFFIXES.spacer),
 		created: shiftTextRight(HEADER_SUFFIXES.created),
 		updated: shiftTextRight(HEADER_SUFFIXES.updated),
