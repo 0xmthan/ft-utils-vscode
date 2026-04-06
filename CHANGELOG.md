@@ -2,7 +2,6 @@
 
 ## 2.4.0 - 2026-03-29
 
-- Made header spacing dynamic for long email addresses while preserving the frame.
 - Auto-derive login from email when `ft_utils.login` is empty.
 
 ## 2.3.0 - 2026-02-14

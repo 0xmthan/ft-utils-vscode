@@ -2,7 +2,7 @@
   "name": "ft-header",
   "displayName": "ft_utils",
   "description": "Utilities for 42 students: 42 header insertion, auto-header for new files, C function count, and flake8-friendly Python header width.",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "icon": "42.png",
   "publisher": "2mdtln",
   "repository": {

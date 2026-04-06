@@ -1,8 +1,4 @@
-import {
-	HEADER_SUFFIXES,
-	LONG_EMAIL_THRESHOLD,
-	MIN_INNER_WIDTH,
-} from './headerConstants';
+import { HEADER_SUFFIXES, MIN_INNER_WIDTH } from './headerConstants';
 import type { CommentDelimiters, HeaderSettings } from './types';
 
 export function buildHeaderText(
@@ -28,20 +24,17 @@ export function buildHeaderLines(
 ): string[] {
 	const innerWidth = computeInnerWidth(totalWidth, delimiters);
 	const identity = `${settings.login} <${settings.email}>`;
-	const isCompact = settings.email.length > LONG_EMAIL_THRESHOLD;
-	const leftPadding = isCompact ? ' ' : '  ';
-	const suffixes = isCompact ? shiftSuffixesRight() : HEADER_SUFFIXES;
 
 	return [
 		formatBorder(innerWidth, delimiters),
 		formatEmpty(innerWidth, delimiters),
-		formatRightAligned(suffixes.title, innerWidth, delimiters),
-		formatLine(`${leftPadding}${fileName}`, suffixes.file, innerWidth, delimiters),
-		formatRightAligned(suffixes.column, innerWidth, delimiters),
-		formatLine(`${leftPadding}By: ${identity}`, suffixes.by, innerWidth, delimiters),
-		formatRightAligned(suffixes.spacer, innerWidth, delimiters),
-		formatLine(`${leftPadding}Created: ${createdAt} by ${createdBylogin}`, suffixes.created, innerWidth, delimiters),
-		formatLine(`${leftPadding}Updated: ${updatedAt} by ${settings.login}`, suffixes.updated, innerWidth, delimiters),
+		formatRightAligned(HEADER_SUFFIXES.title, innerWidth, delimiters),
+		formatLine(`  ${fileName}`, HEADER_SUFFIXES.file, innerWidth, delimiters),
+		formatRightAligned(HEADER_SUFFIXES.column, innerWidth, delimiters),
+		formatLine(`  By: ${identity}`, HEADER_SUFFIXES.by, innerWidth, delimiters),
+		formatRightAligned(HEADER_SUFFIXES.spacer, innerWidth, delimiters),
+		formatLine(`  Created: ${createdAt} by ${createdBylogin}`, HEADER_SUFFIXES.created, innerWidth, delimiters),
+		formatLine(`  Updated: ${updatedAt} by ${settings.login}`, HEADER_SUFFIXES.updated, innerWidth, delimiters),
 		formatEmpty(innerWidth, delimiters),
 		formatBorder(innerWidth, delimiters),
 	];
@@ -80,29 +73,5 @@ function truncate(value: string, maxLength: number): string {
 	if (value.length <= maxLength) {
 		return value;
 	}
-
-	if (value.endsWith('>')) {
-		return `${value.slice(0, Math.max(0, maxLength - 1))}>`;
-	}
-
 	return value.slice(0, Math.max(0, maxLength));
-}
-
-function shiftSuffixesRight() {
-	return {
-		title: shiftTextRight(HEADER_SUFFIXES.title),
-		column: shiftTextRight(HEADER_SUFFIXES.column),
-		file: shiftTextRight(HEADER_SUFFIXES.file),
-		by: HEADER_SUFFIXES.by.slice(0, -1),
-		spacer: shiftTextRight(HEADER_SUFFIXES.spacer),
-		created: shiftTextRight(HEADER_SUFFIXES.created),
-		updated: shiftTextRight(HEADER_SUFFIXES.updated),
-	};
-}
-
-function shiftTextRight(value: string): string {
-	if (!value) {
-		return value;
-	}
-	return ` ${value.slice(0, -1)}`;
 }

@@ -33,7 +33,6 @@ A lightweight VS Code extension providing essential 42 utilities for C and Pytho
 - Inserts the standard 42 header at the top of the file.
 - If the header already exists, it updates the `Updated` line.
 - Saving a file with an existing header refreshes the `Updated` timestamp.
-- Supports long logins and keeps full emails visible.
 - Uses a 79-character total header width for Python files to respect flake8 linter standards (`E501`).
 
 #### Auto Header

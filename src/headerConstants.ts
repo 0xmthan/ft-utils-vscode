@@ -4,7 +4,6 @@ export const CREATED_LINE_INDEX = 7;
 export const DEFAULT_HEADER_WIDTH = 80;
 export const PYTHON_HEADER_WIDTH = 79;
 export const MIN_INNER_WIDTH = 20;
-export const LONG_EMAIL_THRESHOLD = 33;
 
 export function getHeaderWidthForLanguage(languageId: string): number {
 	return languageId.toLowerCase() === 'python' ? PYTHON_HEADER_WIDTH : DEFAULT_HEADER_WIDTH;
