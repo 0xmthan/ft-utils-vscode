@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 			'Open Repository',
 		);
 		if (choice === 'Open Repository') {
-			await vscode.env.openExternal(vscode.Uri.parse('https://github.com/2mdtln/ft-utils-vscode'));
+			await vscode.env.openExternal(vscode.Uri.parse('https://github.com/0xmthan/ft-utils-vscode'));
 		}
 	});
 	const functionCountStatus = new FunctionCountStatus('ft_utils.showStarPrompt');

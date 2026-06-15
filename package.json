@@ -2,17 +2,17 @@
   "name": "ft-header",
   "displayName": "ft_utils",
   "description": "Utilities for 42 students: 42 header insertion, auto-header for new files, C function count, and flake8-friendly Python header width.",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "icon": "42.png",
   "publisher": "2mdtln",
   "repository": {
     "type": "git",
-    "url": "https://github.com/2mdtln/ft-utils-vscode.git"
+    "url": "https://github.com/0xmthan/ft-utils-vscode.git"
   },
   "bugs": {
-    "url": "https://github.com/2mdtln/ft-utils-vscode/issues"
+    "url": "https://github.com/0xmthan/ft-utils-vscode/issues"
   },
-  "homepage": "https://github.com/2mdtln/ft-utils-vscode",
+  "homepage": "https://github.com/0xmthan/ft-utils-vscode",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -86,14 +86,15 @@
     "watch": "node esbuild.js --watch",
     "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
     "check-types": "tsc --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "vsix": "pnpm dlx @vscode/vsce package"
   },
   "devDependencies": {
-    "@types/node": "~22.19.15",
+    "@types/node": "~25.9.3",
     "@types/vscode": "^1.70.0",
-    "esbuild": "^0.27.4",
+    "esbuild": "^0.27.7",
     "eslint": "^9.39.4",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.2"
+    "typescript-eslint": "^8.61.0"
   }
 }

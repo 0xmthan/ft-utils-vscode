@@ -72,9 +72,9 @@ Add these keys to your VS Code `settings.json`:
 
 ## Star
 
-If this extension improves your workflow, consider ⭐ starring the [repository](https://github.com/2mdtln/ft-utils-vscode).
+If this extension improves your workflow, consider ⭐ starring the [repository](https://github.com/0xmthan/ft-utils-vscode).
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/2mdtln/ft-utils-vscode/blob/main/LICENSE).  
+This project is licensed under the [MIT License](https://github.com/0xmthan/ft-utils-vscode/blob/main/LICENSE).  
 © 2025–2026 Muhammed T (2mdtln)
