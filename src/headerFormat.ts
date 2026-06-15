@@ -23,7 +23,9 @@ export function buildHeaderLines(
 	totalWidth: number,
 ): string[] {
 	const innerWidth = computeInnerWidth(totalWidth, delimiters);
-	const identity = `${settings.login} <${settings.email}>`;
+	const fullIdentity = `${settings.login} <${settings.email}>`;
+	const byAvailable = innerWidth - HEADER_SUFFIXES.by.length;
+	const identity = ('  By: ' + fullIdentity).length < byAvailable ? fullIdentity : settings.email;
 
 	return [
 		formatBorder(innerWidth, delimiters),

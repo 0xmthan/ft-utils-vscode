@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.4.3 - 2026-06-15
+
+- Fall back to email-only on the `By:` line when login + email is too long to fit.
+
 ## 2.4.0 - 2026-03-29
 
 - Auto-derive login from email when `ft_utils.login` is empty.
