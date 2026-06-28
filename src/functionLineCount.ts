@@ -32,16 +32,16 @@ export class FunctionLineCount implements vscode.Disposable {
 			this.okType,
 			this.warnType,
 			vscode.window.onDidChangeActiveTextEditor(editor => {
-				if (editor) this.refresh(editor);
+				if (editor) { this.refresh(editor); }
 			}),
 			vscode.workspace.onDidChangeTextDocument(({ document }) => {
 				const editor = vscode.window.activeTextEditor;
-				if (editor?.document === document) this.refresh(editor);
+				if (editor?.document === document) { this.refresh(editor); }
 			}),
 			vscode.workspace.onDidChangeConfiguration(event => {
 				if (event.affectsConfiguration('ft_utils.showFunctionLineCount')) {
 					const editor = vscode.window.activeTextEditor;
-					if (editor) this.refresh(editor);
+					if (editor) { this.refresh(editor); }
 				}
 			}),
 		];
@@ -51,7 +51,7 @@ export class FunctionLineCount implements vscode.Disposable {
 	}
 
 	dispose() {
-		for (const sub of this.subscriptions) sub.dispose();
+		for (const sub of this.subscriptions) { sub.dispose(); }
 	}
 
 	private refresh(editor: vscode.TextEditor) {
@@ -134,7 +134,7 @@ function parseFunctions(text: string): FunctionInfo[] {
 function countNewlines(text: string, from: number, to: number): number {
 	let count = 0;
 	for (let i = from; i < to; i++) {
-		if (text[i] === '\n') count++;
+		if (text[i] === '\n') { count++; }
 	}
 	return count;
 }
