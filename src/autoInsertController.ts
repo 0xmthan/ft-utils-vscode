@@ -57,7 +57,8 @@ export class AutoInsertController implements vscode.Disposable {
 	private async insertHeaderIntoFile(uri: vscode.Uri, settings: HeaderSettings) {
 		try {
 			const document = await vscode.workspace.openTextDocument(uri);
-			if (detectHeader(document)) {
+			const AUTO_INSERT_LANGUAGES = new Set(['c', 'cpp', 'python']);
+			if (!AUTO_INSERT_LANGUAGES.has(document.languageId) || detectHeader(document)) {
 				return;
 			}
 
