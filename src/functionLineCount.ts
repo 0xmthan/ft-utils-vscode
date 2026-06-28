@@ -67,6 +67,7 @@ export class FunctionLineCount implements vscode.Disposable {
 		const warn: vscode.DecorationOptions[] = [];
 
 		for (const fn of functions) {
+			if (fn.lineCount < 0) { continue; }
 			const lineEnd = editor.document.lineAt(fn.closingLine).range.end;
 			const range = new vscode.Range(lineEnd, lineEnd);
 			const over = fn.lineCount > NORMINETTE_LINE_LIMIT;
