@@ -50,6 +50,11 @@ A lightweight VS Code extension providing essential 42 utilities for C and Pytho
 - Warns when function count is `> 5`.
 - Updates automatically as you edit.
 
+### Function Line Count (`.c`)
+- Shows the line count of each function inline, after the closing `}`.
+- Turns red when a function exceeds the 25-line norminette limit.
+- Can be disabled via `ft_utils.showFunctionLineCount`.
+
 ## Configuration
 
 You can configure the extension in 2 ways.

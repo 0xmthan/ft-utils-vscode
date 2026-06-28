@@ -10,6 +10,7 @@ import { formatTimestamp } from './time';
 import type { HeaderSettings } from './types';
 import { StatusNotifier } from './statusNotifier';
 import { FunctionCountStatus } from './functionCountStatus';
+import { FunctionLineCount } from './functionLineCount';
 
 const UPDATE_ON_SAVE_STATE_KEY = 'ft_utils.updateHeaderOnSave';
 
@@ -25,6 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	});
 	const functionCountStatus = new FunctionCountStatus('ft_utils.showStarPrompt');
+	const functionLineCount = new FunctionLineCount();
 	const autoInsertController = new AutoInsertController(context, notifier);
 
 	const insertCommand = vscode.commands.registerCommand('ft_utils.insertHeader', async () => {
@@ -89,6 +91,7 @@ export function activate(context: vscode.ExtensionContext) {
 		autoInsertController,
 		notifier,
 		functionCountStatus,
+		functionLineCount,
 	);
 }
 

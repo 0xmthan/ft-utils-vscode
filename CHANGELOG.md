@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.5.0 - 2026-06-28
+
+- Added inline function line count for `.c` files.. shows line count after each closing `}`, turns red over the 25-line norminette limit.
+- New setting: `ft_utils.showFunctionLineCount` to disable the feature.
+- Auto header insertion now limited to C, C++, and Python files.
+
 ## 2.4.3 - 2026-06-15
 
 - Fall back to email-only on the `By:` line when login + email is too long to fit.

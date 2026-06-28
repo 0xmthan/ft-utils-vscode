@@ -45,7 +45,7 @@ export class FunctionCountStatus implements vscode.Disposable {
 	}
 }
 
-function isCFile(document: vscode.TextDocument): boolean {
+export function isCFile(document: vscode.TextDocument): boolean {
 	if (document.languageId === 'c') {
 		return true;
 	}
@@ -89,7 +89,7 @@ function countFunctions(content: string): number {
 	return count;
 }
 
-function isFunctionDefinition(candidate: string): boolean {
+export function isFunctionDefinition(candidate: string): boolean {
 	const declaration = candidate.trim();
 	if (!declaration.endsWith('{') || declaration.startsWith('typedef')) {
 		return false;
@@ -155,7 +155,7 @@ function skipWhitespaceBackward(text: string, index: number): number {
 	return cursor;
 }
 
-function stripCommentsAndStrings(content: string): string {
+export function stripCommentsAndStrings(content: string): string {
 	enum State {
 		Code,
 		LineComment,
